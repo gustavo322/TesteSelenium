@@ -22,6 +22,15 @@
 </dependency>
 
 </dependencies>
+  <build>
   
+    <pluginManagement>
+        <plugins>
+            <plugin></plugin>
+            <plugin> </plugin>
+                  
+        </plugins>
+    </pluginManagement>
+</build>
   
 </project>

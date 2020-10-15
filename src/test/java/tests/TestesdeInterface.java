@@ -10,10 +10,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestesdeInterface {
+	public String WebDriver = "C:\\Users\\User\\Desktop\\Workspace\\TesteWebMotors\\chromedriver.exe"; 
 	
 	@Test
 	public void TesteBuscaHondaCity() {
-	System.setProperty("webdriver.chrome.driver", "D:\\DEV2\\Workspace\\chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver", WebDriver);
 	WebDriver navegador = new ChromeDriver();
 	navegador.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	navegador.get("https://www.webmotors.com.br/carros/estoque?tipoveiculo=carros&estadocidade=estoque");
@@ -32,7 +33,7 @@ public class TestesdeInterface {
 		
 		@Test
 		public void TesteListagemdeEstoqueSemEstoqueHondaCity() {
-		System.setProperty("webdriver.chrome.driver", "D:\\DEV2\\Workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", WebDriver);
 		WebDriver navegador = new ChromeDriver();
 		navegador.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		navegador.get("https://www.webmotors.com.br/carros/estoque/?IdRevendedor=3834764&TipoVeiculo=carros&anunciante=concession%C3%A1ria%7Cloja");
@@ -50,7 +51,7 @@ public class TestesdeInterface {
 		
 		@Test
 		public void TesteListagemdeEstoqueComEstoqueHondaHRV() {
-		System.setProperty("webdriver.chrome.driver", "D:\\DEV2\\Workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", WebDriver);
 		WebDriver navegador = new ChromeDriver();
 		navegador.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		navegador.get("https://www.webmotors.com.br/carros/estoque/?IdRevendedor=3834764&TipoVeiculo=carros&anunciante=concession%C3%A1ria%7Cloja");
