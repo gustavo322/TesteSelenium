@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,6 +24,8 @@ public class TestesdeInterface {
 	navegador.findElement(By.linkText("CITY")).click();
 	navegador.findElement(By.xpath("//div[@id='root']/main/div/div[2]/div/div/div[2]/div[2]/div/form/div[3]/div[2]/div[2]/div[3]")).click();
 	navegador.findElement(By.linkText("1.5 DX 16V FLEX 4P AUTOMÁTICO")).click();	
+	String filtro = navegador.findElement(By.linkText("HONDA CITY 1.5 DX 16V FLEX 4P AUTOMÁTICO")).getText();
+	assertEquals(filtro, "HONDA CITY 1.5 DX 16V FLEX 4P AUTOMÁTICO");
 	navegador.quit();
 	
 
@@ -30,7 +33,7 @@ public class TestesdeInterface {
 	}
 	
 
-		
+		@Ignore //A loja não possui estoque para este carro no momento, quando voltar a possuir basta remover esta linha
 		@Test
 		public void TesteListagemdeEstoqueSemEstoqueHondaCity() {
 		System.setProperty("webdriver.chrome.driver", WebDriver);
@@ -41,7 +44,11 @@ public class TestesdeInterface {
 		navegador.findElement(By.xpath("//div[@id='root']/main/div/div[2]/div/div/div[2]/div[2]/div/form/div[3]/div[2]/div[2]/div[2]")).click();
 		navegador.findElement(By.linkText("CITY")).click();
 		navegador.findElement(By.xpath("//div[@id='root']/main/div/div[2]/div/div/div[2]/div[2]/div/form/div[3]/div[2]/div[2]/div[3]")).click();
-		navegador.findElement(By.linkText("1.5 DX 16V FLEX 4P AUTOMÁTICO")).click();	
+		navegador.findElement(By.linkText("1.5 DX 16V FLEX 4P AUTOMÁTICO")).click();
+		String filtro = navegador.findElement(By.linkText("HONDA CITY 1.5 DX 16V FLEX 4P AUTOMÁTICO")).getText();
+		assertEquals(filtro, "HONDA CITY 1.5 DX 16V FLEX 4P AUTOMÁTICO");
+		String filtroLoja = navegador.findElement(By.linkText("MAZOLA AUTOMOVEIS")).getText();
+		assertEquals(filtroLoja, "MAZOLA AUTOMOVEIS");
 		navegador.quit();
 
 		
@@ -59,8 +66,13 @@ public class TestesdeInterface {
 		navegador.findElement(By.xpath("//div[@id='root']/main/div/div[2]/div/div/div[2]/div[2]/div/form/div[3]/div[2]/div[2]/div[2]")).click();
 		navegador.findElement(By.linkText("HR-V")).click();
 		navegador.findElement(By.xpath("//div[@id='root']/main/div/div[2]/div/div/div[2]/div[2]/div/form/div[3]/div[2]/div[2]/div[3]")).click();
-		navegador.findElement(By.linkText("1.8 16V FLEX EX 4P AUTOMÁTICO")).click();	
+		navegador.findElement(By.linkText("1.8 16V FLEX EX 4P AUTOMÁTICO")).click();
+		String filtro = navegador.findElement(By.linkText("HONDA HR-V 1.8 16V FLEX EX 4P AUTOMÁTICO")).getText();
+		assertEquals(filtro, "HONDA HR-V 1.8 16V FLEX EX 4P AUTOMÁTICO");
+		String filtroLoja = navegador.findElement(By.linkText("MAZOLA AUTOMOVEIS")).getText();
+		assertEquals(filtroLoja, "MAZOLA AUTOMOVEIS");
 		navegador.quit();
+		
 
 		
 
